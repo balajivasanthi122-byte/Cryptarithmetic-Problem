@@ -30,47 +30,48 @@ isValid(nodeList, count, word1, word2, word3)<br>
 Input − A list of nodes, the number of elements in the node list and three words.<br>
 
 Output − True if the sum of the value for word1 and word2 is same as word3 value.<br>
+```
+Initialize val1, val2, val3 to 0
 
-Begin<br>
-   m := 1<br>
-   for each letter i from right to left of word1, do<br>
-      ch := word1[i]<br>
-      for all elements j in the nodeList, do<br>
-         if nodeList[j].letter = ch, then<br>
-            break<br>
-      done<br>
-      val1 := val1 + (m * nodeList[j].value)<br>
-      m := m * 10<br>
-   done<br>
+m := 1
+for each letter i from right to left in word1 do
+    ch := word1[i]
+    for each element j in nodeList do
+        if nodeList[j].letter = ch then
+            break  // Found matching letter
+    end for
+    val1 := val1 + (m * nodeList[j].value)
+    m := m * 10
+end for
 
-   m := 1<br>
-   for each letter i from right to left of word2, do<br>
-      ch := word2[i]<br>
-      for all elements j in the nodeList, do<br>
-         if nodeList[j].letter = ch, then<br>
-            break<br>
-      done<br>
+m := 1
+for each letter i from right to left in word2 do
+    ch := word2[i]
+    for each element j in nodeList do
+        if nodeList[j].letter = ch then
+            break
+    end for
+    val2 := val2 + (m * nodeList[j].value)
+    m := m * 10
+end for
 
-      val2 := val2 + (m * nodeList[j].value)
-      m := m * 10
-   done<br>
+m := 1
+for each letter i from right to left in word3 do
+    ch := word3[i]
+    for each element j in nodeList do
+        if nodeList[j].letter = ch then
+            break
+    end for
+    val3 := val3 + (m * nodeList[j].value)
+    m := m * 10
+end for
 
-   m := 1<br>
-   for each letter i from right to left of word3, do<br>
-      ch := word3[i]<br>
-      for all elements j in the nodeList, do<br>
-         if nodeList[j].letter = ch, then<br>
-            break<br>
-      done<br>
-
-      val3 := val3 + (m * nodeList[j].value)
-      m := m * 10
-   done<br>
-
-   if val3 = (val1 + val2), then<br>
-      return true<br>
-   return false<br>
-End<br>
+if val3 = (val1 + val2) then
+    return true
+else
+    return false
+end if
+```
 <hr>
 <h2>Sample Input and Output:</h2>
 SEND = 9567<br>
